@@ -49,17 +49,17 @@ function Header() {
       <div className="flex gap-2 flex-1 justify-end items-center">
         <div className="avatar">
           <div className="!flex justify-center items-center min-w-10 rounded-full bg-[#e4e6eb] hover:bg-[#d8dadf]">
-            <IconMenuMini className="w-5" />
+            <IconMenuMini className="w-[18px]" />
           </div>
         </div>
         <div className="avatar">
           <div className="!flex justify-center items-center min-w-10 rounded-full bg-[#e4e6eb] hover:bg-[#d8dadf]">
-            <IconMessenger className="w-6" />
+            <IconMessenger className="w-5" />
           </div>
         </div>
         <div className="avatar">
           <div className="!flex justify-center items-center min-w-10 rounded-full bg-[#e4e6eb] hover:bg-[#d8dadf]">
-            <IconNotify className="w-8" />
+            <IconNotify className="w-6" />
           </div>
         </div>
         {/* <div className="flex justify-center items-center w-[2rem] rounded-full">
