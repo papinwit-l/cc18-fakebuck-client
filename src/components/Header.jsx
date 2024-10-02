@@ -1,16 +1,18 @@
 import React from "react";
 import {
   FacebookLogo,
+  IconAvatar,
   IconGroup,
   IconHome,
+  IconNotify,
   IconShop,
   IconVideo,
 } from "../icons";
 
 function Header() {
   return (
-    <header className="bg-orange-200 h-14 w-full fixed top-0 z-10 flex justify-between p-2">
-      <div className="flex gap-2 items-center">
+    <header className="bg-orange-200 h-14 w-full fixed top-0 z-10 flex justify-between p-2 shadow-lg bg-white">
+      <div className="flex gap-2 flex-1 items-center">
         <FacebookLogo className="h-[3rem]" />
         <label className="input input-bordered flex items-center gap-2 h-10 w-64 rounded-full">
           <input type="text" className="grow" placeholder="Search" />
@@ -42,7 +44,14 @@ function Header() {
           <IconGroup className="h-[1.9rem]" />
         </div>
       </div>
-      <div>Option</div>
+      <div className="flex gap-2 flex-1 justify-end items-center">
+        <div className="flex justify-center items-center w-[2rem] rounded-full">
+          <IconNotify />
+        </div>
+        <div className="flex justify-center items-center w-[2rem] rounded-full">
+          <IconAvatar />
+        </div>
+      </div>
     </header>
   );
 }
