@@ -11,7 +11,7 @@ import {
 
 function Header() {
   return (
-    <header className="bg-orange-200 h-14 w-full fixed top-0 z-10 flex justify-between p-2 shadow-lg bg-white">
+    <header className="h-14 w-full fixed top-0 z-10 flex justify-between p-2 shadow-lg bg-white">
       <div className="flex gap-2 flex-1 items-center">
         <FacebookLogo className="h-[3rem]" />
         <label className="input input-bordered flex items-center gap-2 h-10 w-64 rounded-full">
@@ -45,11 +45,18 @@ function Header() {
         </div>
       </div>
       <div className="flex gap-2 flex-1 justify-end items-center">
-        <div className="flex justify-center items-center w-[2rem] rounded-full">
-          <IconNotify />
+        <div className="avatar">
+          <div className="!flex justify-center items-center min-w-10 rounded-full bg-[#e4e6eb]">
+            <IconNotify className="w-8" />
+          </div>
         </div>
-        <div className="flex justify-center items-center w-[2rem] rounded-full">
+        {/* <div className="flex justify-center items-center w-[2rem] rounded-full">
           <IconAvatar />
+        </div> */}
+        <div className="avatar">
+          <div className="w-10 rounded-full">
+            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+          </div>
         </div>
       </div>
     </header>
