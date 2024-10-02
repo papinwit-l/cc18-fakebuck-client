@@ -6,7 +6,7 @@ function Header() {
     <header className="bg-orange-200 h-14 w-full fixed top-0 z-10 flex justify-between">
       <div className="flex gap-2 items-center">
         <FacebookLogo className="w-12" />
-        <label className="input input-bordered flex items-center gap-2">
+        <label className="input input-bordered flex items-center gap-2 h-10 w-64 rounded-full">
           <input type="text" className="grow" placeholder="Search" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
