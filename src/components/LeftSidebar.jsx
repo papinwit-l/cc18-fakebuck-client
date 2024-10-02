@@ -36,6 +36,7 @@ function LeftSidebar() {
         <IconAvatar className="w-8" />
         Andy Codecamp
       </button>
+      <div className="divider"></div>
     </div>
   );
 }
