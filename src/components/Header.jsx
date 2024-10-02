@@ -1,5 +1,11 @@
 import React from "react";
-import { FacebookLogo, IconHome, IconVideo } from "../icons";
+import {
+  FacebookLogo,
+  IconGroup,
+  IconHome,
+  IconShop,
+  IconVideo,
+} from "../icons";
 
 function Header() {
   return (
@@ -29,14 +35,11 @@ function Header() {
         <div className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
           <IconVideo className="h-[1.7rem]" />
         </div>
-        <div className="flex justify-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
-          <IconHome />
+        <div className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
+          <IconShop className="h-[1.8rem]" />
         </div>
-        <div className="flex justify-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
-          <IconHome />
-        </div>
-        <div className="flex justify-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
-          <IconHome />
+        <div className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
+          <IconGroup className="h-[1.9rem]" />
         </div>
       </div>
       <div>Option</div>
