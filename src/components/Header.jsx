@@ -65,10 +65,26 @@ function Header() {
         {/* <div className="flex justify-center items-center w-[2rem] rounded-full">
           <IconAvatar />
         </div> */}
-        <div className="avatar hover:contrast-75">
+
+        {/* <div className="avatar hover:contrast-75">
           <div className="w-10 rounded-full">
             <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
           </div>
+        </div> */}
+        <div className="dropdown dropdown-end">
+          <div tabIndex={0} role="button" className="avatar hover:contrast-75">
+            <div className="w-10 rounded-full">
+              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+            </div>
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+          >
+            <li>
+              <a>Logout</a>
+            </li>
+          </ul>
         </div>
       </div>
     </header>
