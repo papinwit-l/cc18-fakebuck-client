@@ -4,6 +4,8 @@ import {
   IconAvatar,
   IconGroup,
   IconHome,
+  IconMenuMini,
+  IconMessenger,
   IconNotify,
   IconShop,
   IconVideo,
@@ -46,14 +48,24 @@ function Header() {
       </div>
       <div className="flex gap-2 flex-1 justify-end items-center">
         <div className="avatar">
-          <div className="!flex justify-center items-center min-w-10 rounded-full bg-[#e4e6eb]">
+          <div className="!flex justify-center items-center min-w-10 rounded-full bg-[#e4e6eb] hover:bg-[#d8dadf]">
+            <IconMenuMini className="w-5" />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="!flex justify-center items-center min-w-10 rounded-full bg-[#e4e6eb] hover:bg-[#d8dadf]">
+            <IconMessenger className="w-6" />
+          </div>
+        </div>
+        <div className="avatar">
+          <div className="!flex justify-center items-center min-w-10 rounded-full bg-[#e4e6eb] hover:bg-[#d8dadf]">
             <IconNotify className="w-8" />
           </div>
         </div>
         {/* <div className="flex justify-center items-center w-[2rem] rounded-full">
           <IconAvatar />
         </div> */}
-        <div className="avatar">
+        <div className="avatar hover:contrast-75">
           <div className="w-10 rounded-full">
             <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
           </div>
