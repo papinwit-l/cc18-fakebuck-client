@@ -1,11 +1,11 @@
 import React from "react";
-import { FacebookLogo } from "../icons";
+import { FacebookLogo, IconHome, IconVideo } from "../icons";
 
 function Header() {
   return (
-    <header className="bg-orange-200 h-14 w-full fixed top-0 z-10 flex justify-between">
+    <header className="bg-orange-200 h-14 w-full fixed top-0 z-10 flex justify-between p-2">
       <div className="flex gap-2 items-center">
-        <FacebookLogo className="w-12" />
+        <FacebookLogo className="h-[3rem]" />
         <label className="input input-bordered flex items-center gap-2 h-10 w-64 rounded-full">
           <input type="text" className="grow" placeholder="Search" />
           <svg
@@ -22,7 +22,23 @@ function Header() {
           </svg>
         </label>
       </div>
-      <div>Menu</div>
+      <div className="flex gap-2 flex-1 justify-center">
+        <div className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
+          <IconHome className="h-[2rem]" />
+        </div>
+        <div className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
+          <IconVideo className="h-[1.7rem]" />
+        </div>
+        <div className="flex justify-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
+          <IconHome />
+        </div>
+        <div className="flex justify-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
+          <IconHome />
+        </div>
+        <div className="flex justify-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
+          <IconHome />
+        </div>
+      </div>
       <div>Option</div>
     </header>
   );
