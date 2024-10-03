@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FacebookLogo,
   IconAvatar,
   IconGroup,
   IconHome,
+  IconMenuGroup,
+  IconMenuGroupActive,
+  IconMenuHome,
+  IconMenuHomeActive,
+  IconMenuMarket,
+  IconMenuMarketActive,
   IconMenuMini,
+  IconMenuVideo,
+  IconMenuVideoActive,
   IconMessenger,
   IconNotify,
   IconShop,
@@ -12,6 +20,25 @@ import {
 } from "../icons";
 
 function Header() {
+  const [menuActive, setMenuActive] = useState({
+    home: true,
+    video: false,
+    market: false,
+    group: false,
+  });
+
+  const HdlMenuClick = (menu) => {
+    // console.log(menu);
+    setMenuActive({
+      home: false,
+      video: false,
+      market: false,
+      group: false,
+    });
+    setMenuActive((prev) => ({ ...prev, [menu]: true }));
+    console.log(menuActive);
+  };
+
   return (
     <header className="h-14 w-full fixed top-0 z-10 flex justify-between p-2 shadow-lg bg-white">
       <div className="flex gap-2 flex-1 items-center">
@@ -33,17 +60,31 @@ function Header() {
         </label>
       </div>
       <div className="flex gap-2 flex-1 justify-center">
-        <div className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
-          <IconHome className="h-[2rem]" />
+        <div
+          className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md"
+          onClick={() => HdlMenuClick("home")}
+        >
+          {menuActive.home ? <IconMenuHomeActive /> : <IconMenuHome />}
         </div>
-        <div className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
-          <IconVideo className="h-[1.7rem]" />
+        <div
+          className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md"
+          onClick={() => HdlMenuClick("video")}
+        >
+          {menuActive.video ? <IconMenuVideoActive /> : <IconMenuVideo />}
         </div>
-        <div className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
-          <IconShop className="h-[1.8rem]" />
+        <div
+          name="market"
+          className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md"
+          onClick={() => HdlMenuClick("market")}
+        >
+          {menuActive.market ? <IconMenuMarketActive /> : <IconMenuMarket />}
         </div>
-        <div className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md">
-          <IconGroup className="h-[1.9rem]" />
+        <div
+          name="group"
+          className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md"
+          onClick={() => HdlMenuClick("group")}
+        >
+          {menuActive.group ? <IconMenuGroupActive /> : <IconMenuGroup />}
         </div>
       </div>
       <div className="flex gap-2 flex-1 justify-end items-center">

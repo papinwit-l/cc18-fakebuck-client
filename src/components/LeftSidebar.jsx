@@ -1,11 +1,16 @@
 import React from "react";
 import {
-  IconAvatar,
-  IconFriend,
-  IconGroupActive,
-  IconHistory,
-  IconSaved,
+  FbIconFriends,
+  FbIconGaming,
+  FbIconGroups,
+  FbIconMarketplace,
+  FbIconMemories,
+  FbIconSaved,
+  FbIconVideo,
+  IconMoreDown,
 } from "../icons";
+import Avatar from "./Avatar";
+import MenuItem from "./MenuItem";
 
 function LeftSidebar() {
   return (
@@ -17,81 +22,34 @@ function LeftSidebar() {
     overflow-hidden hover:overflow-auto
     scrollbar-custom"
     >
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        <IconAvatar className="w-8" />
-        Andy Codecamp
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        {/* <IconFriend className="w-8" /> */}
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-333px] bg-no-repeat"></i>
-        Friends
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        {/* <IconHistory className="w-8" /> */}
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-481px] bg-no-repeat"></i>
-        Memories
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        {/* <IconSaved className="w-7" /> */}
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-185px] bg-no-repeat"></i>
-        Saved
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        {/* <IconGroupActive className="w-8" /> */}
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-37px] bg-no-repeat"></i>
-        Groups
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-555px] bg-no-repeat"></i>
-        Video
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-444px] bg-no-repeat"></i>
-        Marketplace
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-74px] bg-no-repeat"></i>
-        Play games
-      </button>
+      <MenuItem
+        icon={Avatar}
+        text="Andy Codecamp"
+        imgSrc="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+        className="w-[36px]"
+      />
+      <MenuItem icon={FbIconFriends} text="Friends" />
+      <MenuItem icon={FbIconMemories} text="Memories" />
+      <MenuItem icon={FbIconSaved} text="Saved" />
+      <MenuItem icon={FbIconGroups} text="Groups" />
+      <MenuItem icon={FbIconVideo} text="Video" />
+      <MenuItem icon={FbIconMarketplace} text="Marketplace" />
+      <MenuItem icon={FbIconGaming} text="Play games" />
+      <MenuItem
+        icon={IconMoreDown}
+        text="See more"
+        className="avatar p-[10px] w-[36px] h-[36px] rounded-full bg-gray-300"
+      />
       <div className="divider"></div>
       {/*  */}
       {/*  */}
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        <IconAvatar className="w-8" />
-        Andy Codecamp
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        {/* <IconFriend className="w-8" /> */}
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-333px] bg-no-repeat"></i>
-        Friends
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        {/* <IconHistory className="w-8" /> */}
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-481px] bg-no-repeat"></i>
-        Memories
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        {/* <IconSaved className="w-7" /> */}
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-185px] bg-no-repeat"></i>
-        Saved
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        {/* <IconGroupActive className="w-8" /> */}
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-37px] bg-no-repeat"></i>
-        Groups
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-555px] bg-no-repeat"></i>
-        Video
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-444px] bg-no-repeat"></i>
-        Marketplace
-      </button>
-      <button className="flex gap-4 btn bg-opacity-0 border-none shadow-none justify-start items-center hover:bg-opacity-20 rounded-sm">
-        <i className="bg-[url('./assets/fb-icon-menu.png')] w-[36px] h-[36px] bg-auto bg-[0_-74px] bg-no-repeat"></i>
-        Play games
-      </button>
+      <MenuItem icon={FbIconFriends} text="Friends" />
+      <MenuItem icon={FbIconMemories} text="Memories" />
+      <MenuItem icon={FbIconSaved} text="Saved" />
+      <MenuItem icon={FbIconGroups} text="Groups" />
+      <MenuItem icon={FbIconVideo} text="Video" />
+      <MenuItem icon={FbIconMarketplace} text="Marketplace" />
+      <MenuItem icon={FbIconGaming} text="Play games" />
     </div>
   );
 }
