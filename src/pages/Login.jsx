@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FacebookTitle } from "../icons";
 import axios from "axios";
 import Register from "./Register";
+import useUserStore from "../stores/userStore";
 
 function Login() {
   const [input, setInput] = useState({
@@ -9,16 +10,19 @@ function Login() {
     password: "",
   });
 
+  const login = useUserStore((state) => state.login);
+  // const token = useUserStore((state) => state.token);
+
   const hdlChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const hdlLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:8000/auth/login", input);
-      console.log(res.data);
+      // const res = await axios.post("http://localhost:8000/auth/login", input);
+      const res = await login(input);
     } catch (error) {
-      console.log(error.response.data.message);
+      console.log(error);
     }
   };
 

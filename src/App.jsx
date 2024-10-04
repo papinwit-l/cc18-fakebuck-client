@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import LeftSidebar from "./components/LeftSidebar";
 import PostContainer from "./components/PostContainer";
@@ -8,9 +9,7 @@ function App() {
     <div className="min-h-screen bg-gray-100">
       <Header />
       <main className="relative flex bg-gray-100 h-fit pt-14">
-        <LeftSidebar />
-        <PostContainer />
-        <RightSidebar />
+        <Outlet />
       </main>
     </div>
   );

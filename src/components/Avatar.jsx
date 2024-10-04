@@ -1,5 +1,5 @@
 import React from "react";
-import { IconAvatar } from "../icons";
+import { IconAvatar, IconMoreDown } from "../icons";
 
 export default function Avatar(props) {
   const { imgSrc, menu, ...restProps } = props;
@@ -14,9 +14,10 @@ export default function Avatar(props) {
         {/* <img src={imgSrc ?  imgSrc : defaultAvatar } /> */}
       </div>
 
-      {/* { menu && 
-					<DropdownArrow className="absolute -bottom-2 -right-1 w-4"/>
-			} */}
+      {menu && (
+        <IconMoreDown className="absolute -bottom-[1px] -right-[1px] w-4 rounded-full p-[2px] bg-gray-300 border-[3px] border-white" />
+      )}
+      {/* {menu && <DropdownArrow className="absolute -bottom-2 -right-1 w-4" />} */}
     </div>
   );
 }

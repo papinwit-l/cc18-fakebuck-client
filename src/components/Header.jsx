@@ -18,8 +18,15 @@ import {
   IconShop,
   IconVideo,
 } from "../icons";
+import { Link } from "react-router-dom";
+import HeaderMenuItem from "./HeaderMenuItem";
+import useUserStore from "../stores/userStore";
+import Avatar from "./Avatar";
 
 function Header() {
+  const logout = useUserStore((state) => state.logout);
+  const user = useUserStore((state) => state.user);
+
   const [menuActive, setMenuActive] = useState({
     home: true,
     video: false,
@@ -36,11 +43,15 @@ function Header() {
       group: false,
     });
     setMenuActive((prev) => ({ ...prev, [menu]: true }));
-    console.log(menuActive);
+    // console.log(menuActive);
   };
 
+  useEffect(() => {
+    console.log(menuActive);
+  }, [menuActive]);
+
   return (
-    <header className="h-14 w-full fixed top-0 z-10 flex justify-between p-2 shadow-lg bg-white">
+    <header className="h-14 w-full fixed top-0 z-10 flex justify-between px-2 shadow-lg bg-white">
       <div className="flex gap-2 flex-1 items-center">
         <FacebookLogo className="h-[3rem]" />
         <label className="input input-bordered flex items-center gap-2 h-10 w-64 rounded-full">
@@ -59,32 +70,129 @@ function Header() {
           </svg>
         </label>
       </div>
+      {/* Menu                       */}
+      {/* Menu                       */}
+      {/* Menu                       */}
       <div className="flex gap-2 flex-1 justify-center">
-        <div
-          className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md"
-          onClick={() => HdlMenuClick("home")}
-        >
-          {menuActive.home ? <IconMenuHomeActive /> : <IconMenuHome />}
+        {/* Home */}
+        <div className="flex flex-col justify-center items-center h-full">
+          {menuActive.home ? (
+            <div
+              onClick={() => HdlMenuClick("home")}
+              className="flex justify-center items-center h-full border-b-4 border-[#0866FF]"
+            >
+              <Link
+                to="/"
+                className="flex justify-center items-center w-28 py-3 rounded-md"
+              >
+                {menuActive.home ? <IconMenuHomeActive /> : <IconMenuHome />}
+              </Link>
+            </div>
+          ) : (
+            <div
+              onClick={() => HdlMenuClick("home")}
+              className="flex justify-center items-center h-full"
+            >
+              <Link
+                to="/"
+                className="flex justify-center items-center w-28 py-3 rounded-md hover:bg-[#f2f2f2]"
+              >
+                {menuActive.home ? <IconMenuHomeActive /> : <IconMenuHome />}
+              </Link>
+            </div>
+          )}
         </div>
-        <div
-          className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md"
-          onClick={() => HdlMenuClick("video")}
-        >
-          {menuActive.video ? <IconMenuVideoActive /> : <IconMenuVideo />}
+        {/* Video */}
+        <div className="flex flex-col justify-center items-center h-full">
+          {menuActive.video ? (
+            <div
+              onClick={() => HdlMenuClick("video")}
+              className="flex justify-center items-center h-full border-b-4 border-[#0866FF]"
+            >
+              <Link
+                to="/"
+                className="flex justify-center items-center w-28 py-3 rounded-md"
+              >
+                {menuActive.video ? <IconMenuVideoActive /> : <IconMenuVideo />}
+              </Link>
+            </div>
+          ) : (
+            <div
+              onClick={() => HdlMenuClick("video")}
+              className="flex justify-center items-center h-full"
+            >
+              <Link
+                to="/"
+                className="flex justify-center items-center w-28 py-3 rounded-md hover:bg-[#f2f2f2]"
+              >
+                {menuActive.video ? <IconMenuVideoActive /> : <IconMenuVideo />}
+              </Link>
+            </div>
+          )}
         </div>
-        <div
-          name="market"
-          className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md"
-          onClick={() => HdlMenuClick("market")}
-        >
-          {menuActive.market ? <IconMenuMarketActive /> : <IconMenuMarket />}
+        {/*  */}
+        <div className="flex flex-col justify-center items-center h-full">
+          {menuActive.market ? (
+            <div
+              onClick={() => HdlMenuClick("market")}
+              className="flex justify-center items-center h-full border-b-4 border-[#0866FF]"
+            >
+              <Link
+                to="/"
+                className="flex justify-center items-center w-28 py-3 rounded-md"
+              >
+                {menuActive.market ? (
+                  <IconMenuMarketActive />
+                ) : (
+                  <IconMenuMarket />
+                )}
+              </Link>
+            </div>
+          ) : (
+            <div
+              onClick={() => HdlMenuClick("market")}
+              className="flex justify-center items-center h-full"
+            >
+              <Link
+                to="/"
+                className="flex justify-center items-center w-28 py-3 rounded-md hover:bg-[#f2f2f2]"
+              >
+                {menuActive.market ? (
+                  <IconMenuMarketActive />
+                ) : (
+                  <IconMenuMarket />
+                )}
+              </Link>
+            </div>
+          )}
         </div>
-        <div
-          name="group"
-          className="flex justify-center items-center w-20 p-1 hover:bg-[#f2f2f2] rounded-md"
-          onClick={() => HdlMenuClick("group")}
-        >
-          {menuActive.group ? <IconMenuGroupActive /> : <IconMenuGroup />}
+        {/*  */}
+        <div className="flex flex-col justify-center items-center h-full">
+          {menuActive.group ? (
+            <div
+              onClick={() => HdlMenuClick("group")}
+              className="flex justify-center items-center h-full border-b-4 border-[#0866FF]"
+            >
+              <Link
+                to="/friends"
+                className="flex justify-center items-center w-28 py-3 rounded-md"
+              >
+                {menuActive.group ? <IconMenuGroupActive /> : <IconMenuGroup />}
+              </Link>
+            </div>
+          ) : (
+            <div
+              onClick={() => HdlMenuClick("group")}
+              className="flex justify-center items-center h-full"
+            >
+              <Link
+                to="/friends"
+                className="flex justify-center items-center w-28 py-3 rounded-md hover:bg-[#f2f2f2]"
+              >
+                {menuActive.group ? <IconMenuGroupActive /> : <IconMenuGroup />}
+              </Link>
+            </div>
+          )}
         </div>
       </div>
       <div className="flex gap-2 flex-1 justify-end items-center">
@@ -114,15 +222,20 @@ function Header() {
         </div> */}
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="avatar hover:contrast-75">
-            <div className="w-10 rounded-full">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-            </div>
+            <Avatar
+              imgSrc={user.profileImage}
+              className="w-[40px]"
+              menu={true}
+            />
+            {/* <div className="w-10 rounded-full">
+              <img src={user.profileImage} />
+            </div> */}
           </div>
           <ul
             tabIndex={0}
             className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
           >
-            <li>
+            <li onClick={() => logout()}>
               <a>Logout</a>
             </li>
           </ul>

@@ -11,8 +11,11 @@ import {
 } from "../icons";
 import Avatar from "./Avatar";
 import MenuItem from "./MenuItem";
+import useUserStore from "../stores/userStore";
 
 function LeftSidebar() {
+  const user = useUserStore((state) => state.user);
+
   return (
     <div
       className="fixed top-14 h-[calc(100%-3.5rem)] w-[350px] 
@@ -24,8 +27,8 @@ function LeftSidebar() {
     >
       <MenuItem
         icon={Avatar}
-        text="Andy Codecamp"
-        imgSrc="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+        text={user.firstName + " " + user.lastName}
+        imgSrc={user.profileImage}
         className="w-[36px]"
       />
       <MenuItem icon={FbIconFriends} text="Friends" />
