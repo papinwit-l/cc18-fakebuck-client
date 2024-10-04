@@ -9,6 +9,7 @@ function PostForm(props) {
   const user = useUserStore((state) => state.user);
   const token = useUserStore((state) => state.token);
   const createPost = usePostStore((state) => state.createPost);
+  const getAllPosts = usePostStore((state) => state.getAllPosts);
   const { message, setMessage } = props;
   const hdlChange = (e) => {
     setMessage(e.target.value);
@@ -21,6 +22,7 @@ function PostForm(props) {
       console.log(res);
       setMessage("");
       e.target.closest("#post-form-modal").close();
+      getAllPosts(token);
     } catch (error) {
       console.log(error);
     }

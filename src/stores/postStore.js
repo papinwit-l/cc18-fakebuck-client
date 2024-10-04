@@ -24,7 +24,7 @@ const usePostStore = create(
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(res.data);
+        // console.log(res.data);
         set({ posts: res.data.posts });
         return res.data;
       },

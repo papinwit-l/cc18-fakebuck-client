@@ -46,9 +46,9 @@ function Header() {
     // console.log(menuActive);
   };
 
-  useEffect(() => {
-    console.log(menuActive);
-  }, [menuActive]);
+  // useEffect(() => {
+  //   // console.log(menuActive);
+  // }, [menuActive]);
 
   return (
     <header className="h-14 w-full fixed top-0 z-10 flex justify-between px-2 shadow-lg bg-white">

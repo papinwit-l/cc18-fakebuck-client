@@ -16,7 +16,7 @@ const timeAndDate = (input) => {
   //     fullDate.split(" ")[3];
   //   console.log(date);
   //   console.log(time);
-  console.log(a);
+  //   console.log(a);
   return a;
 };
 
